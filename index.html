@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vesta Sound Property Group</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="font-family: 'Montserrat', 'Inter', Arial, sans-serif;">
+
+  <header>
+    <div class="header-content" style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; margin-top:24px; max-width:1200px; margin-left:auto; margin-right:auto;">
+      <!-- Logo on the left -->
+      <img 
+        src="images/logoVSG.png" 
+        alt="Vesta Sound Property Group Logo" 
+        class="logo"
+        style="width:140px; height:auto; object-fit:contain; margin-right:24px;"
+      />
+      <!-- Centered Title -->
+      <h1 class="company-title" style="font-size:2.6rem; font-family:'Montserrat', 'Inter', Arial, sans-serif; font-weight:700; margin:0; flex:1; text-align:center;">
+        Vesta Sound Property Group
+      </h1>
+      <!-- Contact phone on the right -->
+      <div style="min-width:140px; text-align:right;">
+        <a href="tel:2065551234" style="color:#0077b6; text-decoration:none; font-size:1.15rem; font-weight:600;">
+          <i class="fas fa-phone" style="margin-right:8px;"></i>(206) 555-1234
+        </a>
+      </div>
+    </div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#services">Services</a>
+      <a href="listings.html">Listings</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <h2>We Treat Your Home as If It Were Our Own</h2>
+      <p>Cost-Friendly, Full-Service Property Management in the Greater Seattle Area</p>
+      <a href="#contact" class="btn">Get a Free Rental Analysis</a>
+    </section>
+
+    <section id="about" class="info-section">
+      <h2>About Us</h2>
+      <div style="display:flex; flex-direction:row; gap:40px; align-items:center; justify-content:center; flex-wrap:wrap;">
+        <!-- Text on the left -->
+        <div style="flex:1 1 320px; min-width:260px; max-width:480px; font-size:1.18rem; line-height:1.6;">
+          <p>
+            At Vesta Sound Property Group, we provide value-driven, personalized property management tailored to investors, homeowners, and landlords. With a hands-on approach and deep local expertise, we help you navigate the complexities of leasing and managing your property—so you don't have to.
+          </p>
+          <p>
+            We proudly manage a diverse portfolio of single-family homes, condos, and multifamily properties throughout the Greater Seattle Area. Our mission is to protect your investment, reduce your stress, and maximize your returns.
+          </p>
+        </div>
+        <!-- Slideshow on the right -->
+        <div style="flex:1 1 340px; min-width:280px; max-width:420px;">
+          <div id="about-slideshow" style="position:relative; width:100%; height:260px; background:#f6f8fa; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.07); display:flex; align-items:center; justify-content:center;">
+            <button id="about-prev" aria-label="Previous" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.8); border:none; border-radius:50%; width:36px; height:36px; font-size:1.5rem; cursor:pointer; z-index:2;">&#8592;</button>
+            <img id="about-slide-img" src="images/15630House.webp" alt="Property photo" style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+            <button id="about-next" aria-label="Next" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.8); border:none; border-radius:50%; width:36px; height:36px; font-size:1.5rem; cursor:pointer; z-index:2;">&#8594;</button>
+          </div>
+          <div style="text-align:center; margin-top:48px;">
+            <a href="listings.html" class="btn">View Listings</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="grid-section">
+      <h2>Benefits of Working With Us</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Avoid Costly Evictions</h3>
+          <p>Extremely low eviction rates through detailed screening and proactive lease enforcement.</p>
+        </div>
+        <div class="card">
+          <h3>Minimize Vacancy Rates</h3>
+          <p>Comprehensive marketing tools keep your property rented and cash flowing.</p>
+        </div>
+        <div class="card">
+          <h3>Attract & Retain Quality Tenants</h3>
+          <p>20-point screening process ensures tenants respect lease terms and your property.</p>
+        </div>
+        <div class="card">
+          <h3>Maximize Rental Income</h3>
+          <p>Detailed market analysis sets optimal rental rates for strong returns.</p>
+        </div>
+        <div class="card">
+          <h3>Trusted Reputation</h3>
+          <p>Excellent reputation and proven results across the Seattle property management community.</p>
+        </div>
+        <div class="card">
+          <h3>24/7 Online Portal Access</h3>
+          <p>Owners and tenants enjoy full access to payments, maintenance, and records via our Buildium-powered portal.</p>
+        </div>
+      </div>
+      <div class="benefits-quote-row" style="display:flex; align-items:center; justify-content:center; gap:32px; margin-top:40px;">
+        <blockquote style="max-width:500px; text-align:left; font-size:1.15rem; color:#444; font-style:italic; margin:0 auto;">
+          “We don’t just manage properties. We protect investments, build trust, and treat every home like it’s our own.”<br>
+          <span style="display:block; margin-top:10px; font-size:1rem; color:#0077b6; font-style:normal;">- Renee Hung, CEO and Founder</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="services" class="grid-section">
+      <h2>Our Services</h2>
+      <div class="card-grid">
+        <div class="card">
+          <i class="fas fa-user-check" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Thorough Tenant Screening</h3>
+          <p>20-point screening, Fair Housing compliance, move-in documentation, law disclosures, and rekeying.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-bullhorn" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Rental Marketing & Advertising</h3>
+          <p>Market analysis and exposure on major platforms to attract qualified applicants quickly.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-signature" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Lease Preparation & Move-In Coordination</h3>
+          <p>From lease drafting to keys in hand—smooth and compliant move-ins.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-invoice-dollar" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Rent Collection & Financial Reporting</h3>
+          <p>Secure online payments and transparent monthly income/expense statements.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-tools" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Maintenance Coordination</h3>
+          <p>Fast response to repairs and reliable vendor partnerships protect your property and tenants.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-clipboard-check" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Move-Out Inspections & Deposit Handling</h3>
+          <p>Thorough inspections and legally compliant deposit processing.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-comments" style="font-size:2rem; color:#0077b6; margin-bottom:12px;"></i>
+          <h3>Frustration-Free Communication & Oversight</h3>
+          <p>State-of-the-art software gives owners full visibility and control—anytime, anywhere.</p>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:32px;">
+        Let Vesta Sound Property Group help you take the stress out of property management.<br>
+        Whether you're an investor or a homeowner, we're here to support you every step of the way.
+      </p>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@vestasound.com">info@vestasound.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:2065551234">(206) 555-1234</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Greater Puget Sound Area, WA</p>
+      </div>
+      <p style="text-align:center; margin-top:32px; font-size:1.1rem; color:#000000;">
+        Your referral is the best compliment!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Vesta Sound Property Group</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+const aboutSlideshowImages = [
+  "images/15630House.webp",
+  "images/7570House.webp",
+  "images/1808House.jpg",
+  "images/7331House.webp",
+  "images/2510House.jpg",
+  "images/15720House.webp",
+  "images/904House.webp",
+  "images/20804House.webp",
+  "images/626House.jpg",
+  "images/1832House.jpg",
+  "images/3545house.webp",
+  "images/16422House.jpg"
+];
+let aboutSlideIdx = 0;
+
+function getSlideshowElements() {
+  return {
+    aboutImg: document.getElementById('about-slide-img'),
+    aboutPrev: document.getElementById('about-prev'),
+    aboutNext: document.getElementById('about-next'),
+    slideshow: document.getElementById('about-slideshow')
+  };
+}
+
+function slideTo(idx, direction) {
+  const { aboutImg, slideshow } = getSlideshowElements();
+  const newImg = aboutImg.cloneNode();
+  newImg.src = aboutSlideshowImages[idx];
+  newImg.style.zIndex = 2;
+  newImg.id = ""; // Remove id to avoid duplicates
+
+  // Set initial slide-in class
+  newImg.classList.add(direction === 'left' ? 'slide-in-left' : 'slide-in-right');
+
+  // Insert new image as the first child so arrows stay on top
+  slideshow.insertBefore(newImg, slideshow.firstChild);
+
+  // Animate old image out
+  aboutImg.classList.add(direction === 'left' ? 'slide-left' : 'slide-right');
+
+  // Allow the browser to render before removing the slide-in class
+  setTimeout(() => {
+    newImg.classList.remove(direction === 'left' ? 'slide-in-left' : 'slide-in-right');
+    newImg.id = 'about-slide-img';
+    // Remove old image after animation
+    setTimeout(() => {
+      if (aboutImg.parentNode) {
+        aboutImg.parentNode.removeChild(aboutImg);
+      }
+    }, 500);
+  }, 20); // Small delay to trigger CSS animation
+}
+
+document.getElementById('about-prev').onclick = function() {
+  aboutSlideIdx = (aboutSlideIdx - 1 + aboutSlideshowImages.length) % aboutSlideshowImages.length;
+  slideTo(aboutSlideIdx, 'right');
+};
+document.getElementById('about-next').onclick = function() {
+  aboutSlideIdx = (aboutSlideIdx + 1) % aboutSlideshowImages.length;
+  slideTo(aboutSlideIdx, 'left');
+};
+</script>
+</body>
+</html>
+
