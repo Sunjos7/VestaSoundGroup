@@ -276,7 +276,7 @@ document.querySelectorAll('a.nav-link').forEach(link => {
       if (target) {
         const header = document.querySelector('header');
         const headerHeight = header.offsetHeight;
-        const extraOffset = 150;
+        const extraOffset = 100;
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight + extraOffset;
         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
       }
