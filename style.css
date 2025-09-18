@@ -17,6 +17,7 @@ header {
   align-items: center;
   justify-content: center;
   padding: 32px 0 16px 0;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -201,7 +202,21 @@ footer {
 @media (max-width: 700px) {
   .header-content {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-content > div,
+  .header-content img {
+    margin: 0 auto 12px auto !important;
+    text-align: center !important;
+  }
+  nav {
+    flex-direction: column;
     gap: 12px;
+    margin-top: 12px;
+  }
+  .company-title {
+    font-size: 2rem !important;
   }
   main section {
     padding: 24px 12px;
@@ -217,3 +232,42 @@ footer {
     gap: 16px;
   }
 }
+
+@media (max-width: 700px) {
+  .listings-gallery {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .listing-card {
+    max-width: 98vw !important;
+    padding: 12px !important;
+  }
+  .listing-card img {
+    height: 140px !important;
+  }
+  .info-section, .grid-section, .contact-section {
+    padding: 16px !important;
+  }
+}
+
+/* Smooth scroll for internal links, center section in viewport */
+document.querySelectorAll('a.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+        const targetRect = target.getBoundingClientRect();
+        const scrollY = window.pageYOffset;
+        const viewportHeight = window.innerHeight;
+        const sectionHeight = target.offsetHeight;
+        // Calculate position to center section in viewport, accounting for header
+        const targetPosition = targetRect.top + scrollY - headerHeight + (viewportHeight - sectionHeight) / 2;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    }
+  });
+});

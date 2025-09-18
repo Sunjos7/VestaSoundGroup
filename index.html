@@ -7,36 +7,66 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      /* 3D gradient background for the whole page ended up to distracting but can change if wanted */
+      background: linear-gradient(120deg, #ffffff 0%, #e7e7e7 60%, #ffffff 100%);
+      min-height: 100vh;
+    }
+    .grid-section, .info-section, .hero-section, .contact-section {
+      background: linear-gradient(120deg, #fff 60%, #f0f4fa 100%);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border-radius: 18px;
+      margin-bottom: 48px;
+    }
+    .hero-section {
+      background: url('images/BackgroundVSG.jpg') center/cover no-repeat;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: #fff;
+      padding: 48px 16px;
+    }
+  </style>
 </head>
 <body style="font-family: 'Montserrat', 'Inter', Arial, sans-serif;">
 
   <header>
-    <div class="header-content" style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; margin-top:24px; max-width:1200px; margin-left:auto; margin-right:auto;">
-      <!-- Logo on the left -->
-      <img 
-        src="images/logoVSG.png" 
-        alt="Vesta Sound Property Group Logo" 
-        class="logo"
-        style="width:140px; height:auto; object-fit:contain; margin-right:24px;"
-      />
-      <!-- Centered Title -->
-      <h1 class="company-title" style="font-size:2.6rem; font-family:'Montserrat', 'Inter', Arial, sans-serif; font-weight:700; margin:0; flex:1; text-align:center;">
-        Vesta Sound Property Group
-      </h1>
-      <!-- Contact phone on the right -->
-      <div style="min-width:140px; text-align:right;">
-        <a href="tel:2065551234" style="color:#0077b6; text-decoration:none; font-size:1.15rem; font-weight:600;">
-          <i class="fas fa-phone" style="margin-right:8px;"></i>(206) 555-1234
+    <div class="header-content" style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto;">
+      <!-- Logo (left) -->
+      <div style="flex:0 0 240px; display:flex; align-items:center;">
+        <img src="images/logoVSG.png" alt="Vesta Sound Property Group Logo" class="logo large-logo" style="width:240px; height:auto; object-fit:contain;" />
+      </div>
+      <!-- Title (center) -->
+      <div style="flex:1; text-align:center;">
+        <h1 class="company-title" style="font-size:2.6rem; font-family:'Montserrat', 'Inter', Arial, sans-serif; font-weight:700; margin:0;">
+          Vesta Sound Property Group
+        </h1>
+      </div>
+      <!-- Phone (right) -->
+      <div style="flex:0 0 180px; text-align:right;">
+        <a href="tel:2065551234" 
+           style="background:#0077b6; color:#fff; text-decoration:none; font-size:1.15rem; font-weight:600; padding:10px 22px; border-radius:6px; display:inline-flex; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:background 0.2s;">
+          <i class="fas fa-phone"></i>
+          Call Us
         </a>
       </div>
     </div>
     <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#services">Services</a>
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#benefits" class="nav-link">Benefits</a>
+      <a href="#services" class="nav-link">Services</a>
       <a href="listings.html">Listings</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
 
@@ -104,7 +134,7 @@
       <div class="benefits-quote-row" style="display:flex; align-items:center; justify-content:center; gap:32px; margin-top:40px;">
         <blockquote style="max-width:500px; text-align:left; font-size:1.15rem; color:#444; font-style:italic; margin:0 auto;">
           “We don’t just manage properties. We protect investments, build trust, and treat every home like it’s our own.”<br>
-          <span style="display:block; margin-top:10px; font-size:1rem; color:#0077b6; font-style:normal;">- Renee Hung, CEO and Founder</span>
+          <span style="display:block; margin-top:10px; font-size:1rem; color:#0077b6; font-style:normal;">- R.H, Founder</span>
         </blockquote>
       </div>
     </section>
@@ -174,7 +204,7 @@
   <script src="script.js"></script>
   <script>
 const aboutSlideshowImages = [
-  "images/15630House.webp",
+  "images/15630pic.webp",
   "images/7570House.webp",
   "images/1808House.jpg",
   "images/7331House.webp",
@@ -235,6 +265,24 @@ document.getElementById('about-next').onclick = function() {
   aboutSlideIdx = (aboutSlideIdx + 1) % aboutSlideshowImages.length;
   slideTo(aboutSlideIdx, 'left');
 };
+
+// Smooth scroll for internal links, offset for header height + extra space
+document.querySelectorAll('a.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+        const extraOffset = 150;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight + extraOffset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
