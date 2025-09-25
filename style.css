@@ -115,10 +115,8 @@ main section {
 .info-section h2,
 .grid-section h2,
 .contact-section h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #0077b6;
+  font-size: 2rem !important; /* Larger font size for sub headers */
+  margin-bottom: 12px;
 }
 
 .card-grid {
@@ -227,13 +225,7 @@ footer {
     margin: 0 !important;
   }
   .header-content a {
-    padding: 4px 10px !important;
-    font-size: 0.85rem !important;
-    border-radius: 6px !important;
-    position: absolute;
-    right: 10px;
-    top: 14px;
-    z-index: 3;
+    display: none !important;
   }
   nav {
     display: flex;
@@ -285,8 +277,9 @@ footer {
   .info-section h2,
   .grid-section h2,
   .contact-section h2 {
-    font-size: 1rem;
-    margin-bottom: 8px;
+    font-size: 2rem !important;      /* Larger font size for sub headers */
+    margin-bottom: 12px;
+    color: #0077b6 !important;       /* Blue color for sub headers */
   }
   .card-grid {
     gap: 8px;
